@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ES6 Examples (ES6_1, ES6_2, ES6_3)</title>
+</head>
+<body>
+  <h2>Check Console for ES6 Examples Output</h2>
+
+  <script>
+    // =========================
+    // ES6_1
+    // =========================
+
+    // 1. Rewrite code with let and const
+    const name = "Sham";
+    let age = 25;
+
+    // 2. Use template literals with variables
+    console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+
+    // 3. Create a function with default parameter values
+    function greet(person = "Guest", greeting = "Welcome") {
+      console.log(`${greeting}, ${person}!`);
+    }
+    greet();
+    greet("Sundar", "Hello");
+
+    // =========================
+    // ES6_2
+    // =========================
+
+    // 1. Extract values from an array/object using destructuring
+    const colors = ["red", "green", "blue"];
+    const [firstColor, secondColor, thirdColor] = colors;
+    console.log(`First color: ${firstColor}, Second color: ${secondColor}`);
+
+    const user = { username: "sham", city: "Chennai", country: "India" };
+    const { username, city } = user;
+    console.log(`User: ${username}, City: ${city}`);
+
+    // 2. Copy an array using spread operator
+    const fruits = ["apple", "banana", "mango"];
+    const copiedFruits = [...fruits];
+    console.log("Copied Fruits:", copiedFruits);
+
+    // 3. Write a function using rest operator
+    function sum(...numbers) {
+      return numbers.reduce((total, num) => total + num, 0);
+    }
+    console.log("Sum:", sum(10, 20, 30, 40));
+
+    // =========================
+    // ES6_3
+    // =========================
+
+    // 1. Write concise arrow functions
+    const multiply = (a, b) => a * b;
+    console.log("Multiply:", multiply(5, 6));
+
+    const square = n => n * n;
+    console.log("Square:", square(4));
+
+    // 2. Create a simple class with constructor and method
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      introduce() {
+        console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+      }
+    }
+
+    const person1 = new Person("Sham", 25);
+    person1.introduce();
+  </script>
+</body>
+</html>
